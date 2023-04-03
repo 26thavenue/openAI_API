@@ -1,10 +1,11 @@
 const express = require('express');
 const PORT = 8080
 const app = express();
-
 const dotenv = require('dotenv')
 
-dotenv.config()
+const router = require('./routes/route.js');
+
+dotenv.config();
 
 app.listen(PORT, () => {
   console.log('Server started on port 3000');
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to the api 😁')
 })
 
+app.use('/api/v1', router);
 
 // const configuration = new Configuration({
 //   apiKey: process.env.OPENAI_API_KEY,
