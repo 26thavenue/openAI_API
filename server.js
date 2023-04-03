@@ -1,12 +1,18 @@
 const express = require('express');
 const PORT = 8080
 const app = express();
-const { Configuration, OpenAIApi } = require("openai");
+
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 app.listen(PORT, () => {
   console.log('Server started on port 3000');
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the api 😁')
+})
 
 
 // const configuration = new Configuration({
