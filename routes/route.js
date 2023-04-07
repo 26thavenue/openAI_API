@@ -38,4 +38,8 @@ res.json(completion.data.choices[0].message)
 res.send(response.data)
 })
 
+
+//MAKING POSTS REQUESTS
+router.post()
+
 module.exports = router;
